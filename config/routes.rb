@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # Making "pages#home" the view of my homepage
   root "pages#home"
-  get "pages/home"
+  get "about", to: "pages#about"
+  get "contact", to: "pages#contact"
+  post "contact", to: "pages#contact_form" # New route for form submission
   resources :artworks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

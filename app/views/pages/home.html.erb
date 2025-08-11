@@ -1,10 +1,13 @@
-<h1>My Portfolio</h1>
+<h1 class="text-4xl font-bold text-gray-800 text-center my-8">My Portfolio</h1>
 
-<div class="artwork-grid">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
   <% @artworks.each do |artwork| %>
-    <div class="artwork-card">
-      <h2><%= artwork.title %></h2>
-      <%= image_tag artwork.image_url, alt: artwork.title, style: "max-width: 100%; height: auto;" %>
+    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+      <div class="p-4">
+        <h2 class="text-xl font-semibold mb-2"><%= artwork.title %></h2>
+        <p class="text-gray-600 text-sm mb-4"><%= artwork.description %></p>
+      </div>
+      <%= image_tag artwork.image_url, alt: artwork.title, class: "w-full h-auto rounded-b-xl" %>
     </div>
   <% end %>
 </div>

@@ -10,8 +10,8 @@
   </p>
 
   <p>
-    <strong>Image url:</strong>
-    <%= artwork.image_url %>
+    <strong>Image:</strong>
+    <%= image_tag artwork.image_url, alt: artwork.title, style: "max-width: 100%; height: auto;" %>
   </p>
 
 </div>

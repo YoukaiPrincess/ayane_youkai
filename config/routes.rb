@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Making "pages#home" the view of my homepage
+  root "pages#home"
+  get "pages/home"
   resources :artworks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

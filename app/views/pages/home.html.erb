@@ -1,0 +1,10 @@
+<h1>My Portfolio</h1>
+
+<div class="artwork-grid">
+  <% @artworks.each do |artwork| %>
+    <div class="artwork-card">
+      <h2><%= artwork.title %></h2>
+      <%= image_tag artwork.image_url, alt: artwork.title, style: "max-width: 100%; height: auto;" %>
+    </div>
+  <% end %>
+</div>

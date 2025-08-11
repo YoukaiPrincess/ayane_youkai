@@ -1,7 +1,11 @@
-# README
+# Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A cool portfolio website for me <3
+
+## Features
+
+  Tailwind CSS
+  SQLite3
 
 Things you may want to cover:
 

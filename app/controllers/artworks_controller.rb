@@ -67,4 +67,10 @@ class ArtworksController < ApplicationController
     def artwork_params
       params.expect(artwork: [ :title, :description, :image_url ])
     end
+
+  private
+    # Only allow a list of trusted parameters through.
+    def artwork_params
+      params.require(:artwork).permit(:title, :description, :image)
+    end
 end

@@ -1,6 +1,12 @@
 <%= link_to artwork_path(artwork) do %>
   <div id="<%= dom_id artwork %>" class="relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-    <%= image_tag artwork.image_url, alt: artwork.title, class: "w-full h-72 object-cover rounded-xl" %>
+    <% if artwork.image.attached? %>
+      <%= image_tag artwork.image, alt: artwork.title, class: "w-full object-contain rounded-xl" %>
+    <% else %>
+      <div class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-xl">
+        <span class="text-gray-500">No Image</span>
+      </div>
+    <% end %>
     <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
       <h2 class="text-white text-3xl font-bold text-center"><%= artwork.title %></h2>
     </div>

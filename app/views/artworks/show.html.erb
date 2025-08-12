@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @artwork %>
-
-<div>
-  <%= link_to "Edit this artwork", edit_artwork_path(@artwork) %> |
-  <%= link_to "Back to artworks", artworks_path %>
-
-  <%= button_to "Destroy this artwork", @artwork, method: :delete %>
+<div class="container mx-auto p-8">
+  <div class="bg-white rounded-xl shadow-lg mt-8 max-w-6xl mx-auto overflow-hidden">
+    <%= image_tag @artwork.image_url, alt: @artwork.title, class: "w-full h-auto object-cover" %>
+    <div class="p-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2"><%= @artwork.title %></h1>
+      <p class="text-gray-700 text-lg leading-relaxed"><%= @artwork.description %></p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <%= link_to "Edit this artwork", edit_artwork_path(@artwork), class: "bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200" %>
+        <%= link_to "Back to artworks", artworks_path, class: "bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-md transition-colors duration-200" %>
+        <%= button_to "Destroy this artwork", @artwork, method: :delete, class: "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200" %>
+      </div>
+    </div>
+  </div>
 </div>

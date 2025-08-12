@@ -1,13 +1,8 @@
-<h1 class="text-4xl font-bold text-gray-800 text-center my-8">My Portfolio</h1>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-  <% @artworks.each do |artwork| %>
-    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-      <div class="p-4">
-        <h2 class="text-xl font-semibold mb-2"><%= artwork.title %></h2>
-        <p class="text-gray-600 text-sm mb-4"><%= artwork.description %></p>
-      </div>
-      <%= image_tag artwork.image_url, alt: artwork.title, class: "w-full h-auto rounded-b-xl" %>
-    </div>
-  <% end %>
+<div class="container mx-auto p-8 text-center mt-12">
+  <h1 class="text-5xl font-bold text-gray-800 mb-4">Welcome to My Portfolio</h1>
+  <p class="text-gray-700 text-xl max-w-2xl mx-auto mb-8">
+    Hello! I'm a 3D artist specializing in digital environments and character design.
+    This website is a showcase of my work.
+  </p>
+  <%= link_to "View My Work", artworks_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md text-lg transition-colors duration-200" %>
 </div>

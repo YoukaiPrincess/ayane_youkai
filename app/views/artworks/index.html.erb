@@ -1,16 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mx-auto p-8">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-4xl font-bold text-gray-800">My Artworks</h1>
+    <%= link_to "New artwork", new_artwork_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200" %>
+  </div>
 
-<% content_for :title, "Artworks" %>
-
-<h1>Artworks</h1>
-
-<div id="artworks">
-  <% @artworks.each do |artwork| %>
-    <%= render artwork %>
-    <p>
-      <%= link_to "Show this artwork", artwork %>
-    </p>
-  <% end %>
+  <div id="artworks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% @artworks.each do |artwork| %>
+      <%= render artwork %>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New artwork", new_artwork_path %>

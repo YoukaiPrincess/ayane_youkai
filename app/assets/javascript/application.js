@@ -10,3 +10,12 @@
 // about supported directives.
 //
 //= require_tree .
+import GLightbox from 'glightbox';
+const lightbox = GLightbox({
+  selector: '.glightbox',
+  keyboardNavigation: true,
+  closeButton: true,
+  draggable: true,
+  touchNavigation: true,
+  closeOnOutsideClick: true,
+});
